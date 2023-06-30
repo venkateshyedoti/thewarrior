@@ -1,0 +1,9 @@
+#!/bin/bash
+yum update -y
+yum install httpd -y
+systemctl enable httpd
+systemctl start httpd
+echo "hi there...i am in.my server is `hostname`">>/var/www/html/index.html
+useradd devops
+echo devops|passwd --stdin devops
+#End
